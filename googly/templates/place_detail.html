@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+
+	<div class="card" s>
+  	<div class="card-body">
+    	<h5 class="card-title">{{response.result.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{response.result.formatted_address}}</h6>
+      <p class="card-title"> Place ID: {{response.result.place_id}}</p>
+      <p class="card-title">Rating: {{response.result.rating}}</p>
+      <p class="card-title">Number: {{response.result.International_phone_number}}</p>
+      <p class="card-title">Latitude, Longitude: {{response.result.geometry.location.lat}}, {{response.result.geometry.location.lng}}</p>
+</div>
+</div>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAe2iff0HUS8qaCkA6EK18bX9jdPgeVuOE
+    &q={{response.result.geometry.location.lat}},{{response.result.geometry.location.lng}}"%
+</iframe>
+    	
+{% endblock content %}
